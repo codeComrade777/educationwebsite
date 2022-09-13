@@ -49,7 +49,13 @@ body {
     background-color: var(--light-bg);
     padding-left: 30rem;
 }
-
+body.dark{
+    --white: #222;
+    --black: #fff;
+    --light-color: #aaa;
+    --light-bg: #333;
+    --border: .1rem solid rgba(255,255, 255, .2)
+}
 body.active {
     padding-left: 0;
 }
@@ -58,6 +64,14 @@ section {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.heading {
+    padding-bottom: 1.8rem;
+    border-bottom: var(--border);
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: capitalize;
 }
 
 .btn,
@@ -241,7 +255,7 @@ section {
 
 .side-bar .close-side-bar {
     text-align: right;
-    padding:2rem;
+    padding: 2rem;
     padding-bottom: 0;
     display: none;
 }
@@ -257,10 +271,11 @@ section {
     text-align: center;
     border-radius: .5rem;
 }
-.side-bar .close-side-bar i:hover
-{
+
+.side-bar .close-side-bar i:hover {
     background-color: var(--black);
 }
+
 .side-bar .profile {
     padding: 3rem 2rem;
     text-align: center;
@@ -318,12 +333,6 @@ section {
     left: -31rem;
 }
 
-
-
-
-
-
-
 .footer {
     position: sticky;
     bottom: 0;
@@ -342,17 +351,130 @@ section {
     color: var(--main-color);
 }
 
+.quick-select .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
 
+.quick-select .box-container .box {
+    border-radius: .5rem;
+    background-color: var(--white);
+    padding: 2rem;
+}
 
+.quick-select .box-container .box .title {
+    font-size: 2rem;
+    color: var(--black);
+}
 
+.quick-select .box-container .box p {
+    line-height: 1.5;
+    padding-top: 1.5rem;
+    color: var(--light-color);
+    font-size: 1.7rem;
+}
 
+.quick-select .box-container .box p span {
+    color: var(--main-color);
+}
 
+.quick-select .box-container .tutor {
+    text-align: center;
+}
 
+.quick-select .box-container .tutor p {
+    padding-bottom: 1rem;
+}
 
+.quick-select .box-container .box .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.5rem;
+}
 
+.quick-select .box-container .box .flex a {
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background-color: var(--light-bg);
+}
 
+.quick-select .box-container .box .flex a i {
+    margin-right: 1rem;
+    color: var(--black);
+}
 
+.quick-select .box-container .box .flex a span {
+    color: var(--light-color);
+}
 
+.quick-select .box-container .box .flex a:hover {
+    background-color: var(--black);
+}
+
+.quick-select .box-container .box .flex a:hover i {
+    color: var(--white);
+}
+
+.quick-select .box-container .box .flex a:hover span {
+    color: var(--white);
+}
+
+.courses .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27.5rem,1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.courses .box-container .box {
+    border-radius: .5rem;
+    background-color: var(--white);
+    padding: 2rem;
+}
+.courses .box-container .box .tutor{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    gap: 2rem;
+}
+.courses .box-container .box .tutor img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.courses .box-container .box .tutor h3{
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: .2rem;
+}
+.courses .box-container .box .tutor span{
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.courses .box-container .box .thumb{
+    width: 100%;
+    border-radius: .5rem;
+    height: 20rem;
+    object-fit: cover;
+}
+.courses .box-container .box  .title{
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-top: .5rem;
+    padding: .5rem 0;
+}
+.courses .more-btn{
+    margin-top: 2rem;
+    text-align: center;
+}
 
 
 
@@ -360,18 +482,21 @@ section {
 
 /* media-queries */
 @media(max-width:1200px) {
-    body{
+    body {
         padding-left: 0;
     }
-    .side-bar{
+
+    .side-bar {
         transition: .2s linear;
         left: -30rem;
     }
-    .side-bar.active{
+
+    .side-bar.active {
         left: 0;
         box-shadow: 0 0 0 100vw rgba(0, 0, 0, .7);
     }
-    .side-bar .close-side-bar{
+
+    .side-bar .close-side-bar {
         display: block;
     }
 }
@@ -408,5 +533,14 @@ section {
 @media(max-width:450px) {
     html {
         font-size: 50%;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .flex-btn {
+        flex-flow: column;
+        gap: 1;
     }
 }
