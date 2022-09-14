@@ -51,4 +51,3 @@ toggleBtn.onclick=(e)=>{
         disableDarkMode();
     }
 }
-
